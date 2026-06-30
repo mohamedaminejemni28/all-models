@@ -1,0 +1,34 @@
+.venv/
+**/.venv/
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated build and temporary outputs
+dist/
+**/dist/
+tmp_render/
+rendered_ML_Pipeline_Update/
+
+# Logs and local experiment tracking
+logs/
+**/logs/
+*.log
+mlruns/
+**/mlruns/
+mlflow.db
+*.sqlite
+*.sqlite3
+
+# Local OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+.env
+**/.env

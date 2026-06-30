@@ -1,0 +1,45 @@
+data:
+  feature_names_file: "data/raw/ISB Abstract - Joint Angles and TS Variable Names.xlsx"
+
+  variant_file: "data/raw/2024 ALL Post-Processing Speeds Young and Older Adults ALL Features - FINAL AUGUST 20.xlsx"
+  invariant_file: "data/raw/2024 ALL Post-Processing Speeds Young and Older Adults ALL Features - FINAL AUGUST 20.xlsx"
+
+  variant_output: "data/processed/young_old_2024_JA_TS_features.xlsx"
+  invariant_output: "data/processed/young_old_2024_JA_TS_features.xlsx"
+
+
+  sfs_results_excel_file: "src/gaitml/features/young_old_2024_phase4_1_SFS_results.xlsx"
+
+  sfs_results_file: "src/gaitml/features/young_old_2024_phase4_1_SFS_results.xlsx"
+  combination_results_file: "young_old_2024_Step_2_Results_Filtered.xlsx"
+  output_file: "young_old_2024_Scores_RBF.xlsx"
+
+  output_file: "output-young_old/autism_2024_SHAP_data.xlsx"
+  output_dir: "output-young_old/autism_2024_SHA
+
+
+remove_correlated_features:
+  highly_correlated_features_file: "data/raw/Highly correlated features.xlsx"
+
+  input_excel_file: "data/processed/young_old_2024_JA_TS_features.xlsx"
+  output_excel_file: "data/processed/young_old_2024_NH_correlated_features.xlsx"
+
+
+split_datasets:
+  input_file: "data/processed/young_old_2024_NH_correlated_features.xlsx"
+
+  output_train_file: "data/processed/young_old_2024_train.xlsx"
+  output_test_file: "data/processed/young_old_2024_test.xlsx"
+
+
+SFS:
+  dataset_train_file: "data/processed/young_old_2024_train.xlsx"
+  dataset_test_file: "data/processed/young_old_2024_test.xlsx"
+
+  Phase4_1_SFS_scores_file: "src/gaitml/features/young_old_2024_phase4_1_SFS_results.xlsx"
+
+  labels_column: "Group"
+
+  classes:
+    0: "Young"
+    1: "Older"

@@ -1,0 +1,34 @@
+mlflow:
+  experiment_name: "Gait CNN"
+  tracking_uri: "sqlite:///mlflow.db"
+
+training:
+  random_state: 0
+  test_size: 0.2
+  validation_size: 0.2
+  cv_splits: 5
+  epochs: 80
+  batch_size: 16
+  patience: 12
+  learning_rates: [0.001, 0.0005]
+  weight_decays: [0.0001]
+  dropout_values: [0.2, 0.4]
+  feature_counts: [10, 20, 40, 60]
+  hidden_channels: [16, 32]
+  kernel_sizes: [3, 5]
+  use_existing_train_test: true
+  max_permutation_features: 25
+
+datasets:
+  autism_2024:
+    config_file: "configs/config_autism_2024.yaml"
+    output_dir: "output-autism"
+    result_prefix: "autism_2024"
+  young_old_2024:
+    config_file: "configs/config_young_old_2024.yaml"
+    output_dir: "output-young_old"
+    result_prefix: "young_old_2024"
+  flatfoot_control_older_2024:
+    config_file: "configs/config_Flatfoot_2024.yaml"
+    output_dir: "output-flatfoot"
+    result_prefix: "flatfoot_control_older_2024"

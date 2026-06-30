@@ -1,0 +1,30 @@
+
+
+data:
+  feature_names_file: "data/raw/ISB Abstract - Joint Angles and TS Variable Names.xlsx"
+  variant_file: "data/raw/2024 ALL Collected Speeds Young and Older Adults ALL Features - FINAL AUGUST 20.xlsx"
+  invariant_file: "data/raw/2024 ALL Post-Processing Speeds Young and Older Adults ALL Features - FINAL AUGUST 20.xlsx"
+  variant_output: "data/processed/2024 ALL Collected Speeds Young and Older Adults JA and TS features - FINAL AUGUST 20.xlsx"
+  invariant_output: "data/processed/2024 ALL Post-Processing Speeds Young and Older Adults JA and TS features - FINAL AUGUST 20.xlsx"
+
+
+remove_correlated_features:
+  highly_correlated_features_file: "data/raw/Highly correlated features.xlsx"
+  input_excel_file: "data/raw/ALL FEATURES OLDER - Pes Planus and Control JUNE 25.xlsx"
+  output_excel_file: "data/processed/ALL FEATURES OLDER - Pes Planus and Control NH Correlated features JUNE 25.xlsx"
+
+
+split_datasets:
+  input_file: "data/processed/ALL FEATURES OLDER - Pes Planus and Control NH Correlated features JUNE 25.xlsx"
+  output_train_file: "data/processed/ALL FEATURES OLDER - Pes Planus and Control NH Correlated features JUNE 25 Train.xlsx"
+  output_test_file: "data/processed/ALL FEATURES OLDER - Pes Planus and Control NH Correlated features JUNE 25 Test.xlsx"
+
+
+SFS:
+  dataset_train_file: "data/processed/ALL FEATURES OLDER - Pes Planus and Control NH Correlated features JUNE 25 Train.xlsx"
+  dataset_test_file: "data/processed/ALL FEATURES OLDER - Pes Planus and Control NH Correlated features JUNE 25 Test.xlsx"
+  Phase4_1_SFS_scores_file: "src/gaitml/features/phase4_1_SFS_results.xlsx"
+  labels_column: "Group"
+  classes:
+    0: "Control"
+    1: "Flatfoot"

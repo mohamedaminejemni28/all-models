@@ -1,0 +1,49 @@
+data:
+  feature_names_file: "data/raw/ISB Abstract - Joint Angles and TS Variable Names.xlsx"
+
+  variant_file: "data/raw/ALL FEATURES OLDER - Pes Planus and Control JUNE 25.xlsx"
+  invariant_file: "data/raw/ALL FEATURES OLDER - Pes Planus and Control JUNE 25.xlsx"
+
+  variant_output: "data/processed/flatfoot_control_older_2024_train.xlsx"
+  invariant_output: "data/processed/flatfoot_control_older_2024_test.xlsx"
+
+  sfs_results_excel_file: "src/gaitml/features/flatfoot_control_older_2024_phase4_1_SFS_results.xlsx"
+
+  sfs_results_file: "src/gaitml/features/flatfoot_control_older_2024_phase4_1_SFS_results.xlsx"
+  combination_results_file: "flatfoot_control_older_2024_Step_2_Results_Filtered.xlsx"
+
+  scores_file: "flatfoot_control_older_2024_Scores_RBF.xlsx"
+
+  scores_file_top3: "flatfoot_control_older_2024_Scores_RBF_Top3.xlsx"
+  train_file: "data/processed/flatfoot_control_older_2024_train.xlsx"
+  test_file: "data/processed/flatfoot_control_older_2024_test.xlsx"
+
+  output_file: "output-flatfoot/flatfoot_control_older_2024_SHAP_data.xlsx"
+  output_dir: "output-flatfoot/flatfoot_control_older_2024_SHAP"
+
+
+remove_correlated_features:
+  highly_correlated_features_file: "data/raw/Highly correlated features.xlsx"
+
+  input_excel_file: "data/processed/flatfoot_control_older_2024_JA_TS_features.xlsx"
+  output_excel_file: "data/processed/flatfoot_control_older_2024_NH_correlated_features.xlsx"
+
+
+split_datasets:
+  input_file: "data/processed/flatfoot_control_older_2024_NH_correlated_features.xlsx"
+
+  output_train_file: "data/processed/flatfoot_control_older_2024_train.xlsx"
+  output_test_file: "data/processed/flatfoot_control_older_2024_test.xlsx"
+
+
+SFS:
+  dataset_train_file: "data/processed/flatfoot_control_older_2024_train.xlsx"
+  dataset_test_file: "data/processed/flatfoot_control_older_2024_test.xlsx"
+
+  Phase4_1_SFS_scores_file: "src/gaitml/features/flatfoot_control_older_2024_phase4_1_SFS_results.xlsx"
+
+  labels_column: "Group"
+
+  classes:
+    0: "Control"
+    1: "Flatfoot"

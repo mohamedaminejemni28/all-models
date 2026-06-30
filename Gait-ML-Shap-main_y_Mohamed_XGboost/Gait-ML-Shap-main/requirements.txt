@@ -1,0 +1,13 @@
+pyyaml
+pandas
+numpy
+matplotlib
+scikit-learn
+openpyxl
+seaborn
+scipy
+notebook
+mlxtend
+mlflow
+torch
+-e .

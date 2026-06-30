@@ -1,0 +1,51 @@
+data:
+  feature_names_file: "data/raw/ISB Abstract - Joint Angles and TS Variable Names.xlsx"
+
+  # Raw input files
+  variant_file: "data/raw/2024 ALL Post-Processing Speeds Young and Older Adults ALL Features - FINAL AUGUST 20.xlsx"
+  invariant_file: "data/raw/2024 ALL Post-Processing Speeds Young and Older Adults ALL Features - FINAL AUGUST 20.xlsx"
+
+  # Phase 1 output
+  variant_output: "results/young_old_2024_JA_TS_features.xlsx"
+  invariant_output: "results/young_old_2024_JA_TS_features.xlsx"
+
+  # XGBoost Phase 4 files
+  sfs_results_excel_file_xgboost: "results/young_old_2024_phase4_1_SFS_results_XGBoost.xlsx"
+  combination_results_file_xgboost: "results/young_old_2024_Step_2_Results_XGBoost.xlsx"
+  scores_file_xgboost: "results/young_old_2024_Scores_XGBoost.xlsx"
+  scores_file_top3_xgboost: "results/young_old_2024_Scores_XGBoost_Top3.xlsx"
+
+  # XGBoost SHAP output
+  output_file: "output-young_old/young_old_2024_SHAP_data_XGBoost.xlsx"
+  output_dir: "output-young_old/young_old_2024_SHAP"
+
+
+remove_correlated_features:
+  highly_correlated_features_file: "data/raw/Highly correlated features.xlsx"
+
+  # Phase 2 input/output
+  input_excel_file: "results/young_old_2024_JA_TS_features.xlsx"
+  output_excel_file: "results/young_old_2024_NH_correlated_features.xlsx"
+
+
+split_datasets:
+  # Phase 3 input/output
+  input_file: "results/young_old_2024_NH_correlated_features.xlsx"
+
+  output_train_file: "results/young_old_2024_train.xlsx"
+  output_test_file: "results/young_old_2024_test.xlsx"
+
+
+SFS:
+  # Phase 4.1 input files
+  dataset_train_file: "results/young_old_2024_train.xlsx"
+  dataset_test_file: "results/young_old_2024_test.xlsx"
+
+  # Phase 4.1 output file
+  Phase4_1_SFS_scores_file: "results/young_old_2024_phase4_1_SFS_results_XGBoost.xlsx"
+
+  labels_column: "Group"
+
+  classes:
+    0: "Young"
+    1: "Older"
