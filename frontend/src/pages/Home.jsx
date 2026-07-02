@@ -8,8 +8,8 @@ export default function Home() {
         <div className="hero-content">
           <h1>Biomechanical Gait Analysis<br />ML Results Platform</h1>
           <p>
-            Visualize, compare, and explain the performance of five machine learning models
-            (SVM, XGBoost, Random Forest, MLP, and LightGBM) across multiple gait biomechanics datasets.
+            Visualize, compare, and explain the performance of six machine learning models
+            (SVM, XGBoost, Random Forest, MLP, LightGBM, and LSTM/GRU) across multiple gait biomechanics datasets.
           </p>
           <div className="hero-actions">
             <Link to="/models" className="btn btn-primary">Explore Models</Link>

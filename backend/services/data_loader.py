@@ -209,7 +209,11 @@ def get_top3_metrics(model_id: str, dataset_id: str) -> dict:
             "max_features": _safe_str(row.get("max_features")),
             # MLP hyperparameters
             "architecture": _safe_str(_first_non_empty(row.get("Architecture"), row.get("Model"), model_config.get("architecture"))),
-            "hidden_layer_sizes": _safe_str(_first_non_empty(row.get("hidden_layer_sizes"), model_config.get("hidden_layers"), row.get("Architecture"))),
+            "hidden_layer_sizes": _safe_str(_first_non_empty(row.get("hidden_layer_sizes"), model_config.get("hidden_layers"), model_config.get("hidden_size"), row.get("Architecture"))),
+            "cell_type": _safe_str(model_config.get("cell_type")),
+            "hidden_size": _safe_int(model_config.get("hidden_size")),
+            "num_layers": _safe_int(model_config.get("num_layers")),
+            "bidirectional": model_config.get("bidirectional"),
             "activation": _safe_str(row.get("activation")),
             "solver": _safe_str(row.get("solver")),
             "alpha": _safe_float(row.get("alpha")),

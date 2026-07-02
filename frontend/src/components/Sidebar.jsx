@@ -14,6 +14,7 @@ const navItems = [
   { path: '/models/random_forest', icon: '', label: 'Random Forest' },
   { path: '/models/mlp', icon: '', label: 'MLP' },
   { path: '/models/lightgbm', icon: '', label: 'LightGBM' },
+  { path: '/models/lstm_gru', icon: '', label: 'LSTM / GRU' },
 ];
 
 export default function Sidebar() {

@@ -13,6 +13,7 @@ MODEL_ROOTS = {
     "random_forest": PROJECT_ROOT / "Gait-ML-Shap-main_y_Mohamed -Random_Forest" / "Gait-ML-Shap-main",
     "mlp": PROJECT_ROOT / "Gait-ML-Shap-main_y_Mohamed -MLP" / "Gait-ML-Shap-main",
     "lightgbm": PROJECT_ROOT / "Gait-ML-Shap-main_y_Mohamed -LightGBM" / "Gait-ML-Shap-main",
+    "lstm_gru": PROJECT_ROOT / "Gait-ML-Shap-main_y_Mohamed -LSTM_GRU" / "Gait-ML-Shap-main",
 }
 
 DATASETS = {
@@ -85,6 +86,15 @@ MODEL_META = {
         "icon": "LGBM",
         "hyperparameters": ["n_estimators", "num_leaves", "max_depth", "learning_rate", "min_child_samples"],
     },
+    "lstm_gru": {
+        "id": "lstm_gru",
+        "name": "LSTM / GRU",
+        "short_name": "LSTM-GRU",
+        "description": "Recurrent neural-network classifier comparing GRU and LSTM sequence cells over ordered gait features.",
+        "color": "#2563eb",
+        "icon": "RNN",
+        "hyperparameters": ["cell_type", "hidden_size", "num_layers", "dropout", "learning_rate", "batch_size"],
+    },
 }
 
 MODEL_FILE_LABELS = {
@@ -93,6 +103,7 @@ MODEL_FILE_LABELS = {
     "random_forest": "RandomForest",
     "mlp": "MLP",
     "lightgbm": "LightGBM",
+    "lstm_gru": "LSTM_GRU",
 }
 
 SHAP_FOLDER_SUFFIXES = {
@@ -101,6 +112,7 @@ SHAP_FOLDER_SUFFIXES = {
     "random_forest": "SHAP_RandomForest",
     "mlp": "SHAP_MLP",
     "lightgbm": "SHAP_LightGBM",
+    "lstm_gru": "SHAP_LSTM_GRU",
 }
 
 OUTPUT_DIRS = {
